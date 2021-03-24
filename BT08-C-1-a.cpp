@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int Length(char a[])
+int Length( const char a[])
 {
     int i = 0;
     while (*(a+i) != NULL)
@@ -8,7 +8,7 @@ int Length(char a[])
     return i ;
 }
 
-char *DaoNguoc(char str[])
+char *DaoNguoc( const char str[])
 {
     int length = Length(str);
     char *temp = new char[length +1];
@@ -19,7 +19,7 @@ char *DaoNguoc(char str[])
     *(temp+length)=NULL;
     return temp;
 }
-char * delete_char(char a[],char c)
+char * delete_char( const char a[],char c)
 {
     for (int i=0;i<Length(a);i++)
     {
@@ -37,7 +37,7 @@ char * delete_char(char a[],char c)
     return a;
 
 }
-char * pad_right(char a[],int n)
+char * pad_right(const char a[],int n)
 {
     int l=Length(a);
     if (Length(a)>=n)
@@ -65,7 +65,7 @@ char * pad_right(char a[],int n)
     }
     return a;
 }
-char * pad_left(char a[],int n )
+char * pad_left(const char a[],int n )
 {
     int l=Length(a);
     if (Length(a)>=n)
@@ -93,7 +93,7 @@ char * pad_left(char a[],int n )
     }
     return a;
 }
-char * truncate (char a[],int n)
+char * truncate (const char a[],int n)
 {
     if (Length(a)<=n)
     {
